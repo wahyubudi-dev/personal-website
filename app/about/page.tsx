@@ -12,8 +12,8 @@ export const metadata: Metadata = {
 
 export default function AboutPage() {
   return (
-    <main className="flex flex-col items-center py-16 gap-6 px-8 lg:px-0">
-      <div className="max-w-[50rem] w-full">
+    <main className="page-shell">
+      <div className="page-container">
         <About />
         <Separator />
         <Skills />

@@ -148,7 +148,7 @@ export default function Calendar({ data }: CalendarProps) {
         <div
           className={clsx(
             `${selectContribution?.date ? "opacity-100" : "opacity-0"}`,
-            "rounded border-[1px] border-stone-50 bg-white shadow px-2 py-1 text-xs dark:bg-neutral-700 dark:border-neutral-600"
+            "rounded-lg border border-border/60 bg-card shadow-soft px-2 py-1 text-xs transition-opacity"
           )}
         >
           <b className="font-semibold">{selectContribution?.count}</b>{" "}

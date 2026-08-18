@@ -5,20 +5,20 @@ import { workingStatus } from "@/common/constant/working";
 import { motion } from "framer-motion";
 import SummaryProfile from "./summaryProfile";
 import WorkingStatus from "./workingStatus";
+import { fadeInUp, staggerContainer } from "@/common/lib/motion";
 
 export default function Intro() {
   return (
     <motion.section
-      animate={{ opacity: 1, y: 0 }}
-      initial={{ opacity: 0, y: 20 }}
-      exit={{ opacity: 0, y: -20 }}
-      transition={{ duration: 0.3 }}
-      className="pb-8 flex flex-col gap-5"
+      variants={staggerContainer(0.12, 0.05)}
+      initial="hidden"
+      animate="show"
+      className="pb-10 flex flex-col gap-6"
     >
-      <div className="flex items-center justify-between">
-        <div className="flex flex-col gap-1">
+      <div className="flex flex-col gap-3">
+        <motion.div variants={fadeInUp}>
           <TypeAnimation
-            className="font-semibold"
+            className="font-semibold tracking-tight text-foreground"
             sequence={[
               `Hi, i'm Wahyu Budi Utomo`,
               2000,
@@ -30,20 +30,24 @@ export default function Intro() {
             wrapper="span"
             speed={50}
             style={{
-              fontSize: "2em",
+              fontSize: "2.25em",
               display: "inline-block",
             }}
             repeat={Infinity}
           />
-          <ul className="flex items-center gap-2">
-            {workingStatus.map((item, index) => (
-              <WorkingStatus {...item} key={index} />
-            ))}
-          </ul>
-        </div>
-        {/* <ShimmerButton title="Open new opportunities" /> */}
+        </motion.div>
+        <motion.ul
+          variants={fadeInUp}
+          className="flex flex-wrap items-center gap-2"
+        >
+          {workingStatus.map((status, index) => (
+            <WorkingStatus {...status} key={index} />
+          ))}
+        </motion.ul>
       </div>
-      <SummaryProfile />
+      <motion.div variants={fadeInUp}>
+        <SummaryProfile />
+      </motion.div>
     </motion.section>
   );
 }

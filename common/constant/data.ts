@@ -32,7 +32,8 @@ export const servicesData = [
     icon: Tv2,
     name: "Web Development",
     hastag: "#coding",
-    bgColor: "bg-sky-50",
+    iconBg: "bg-sky-100 dark:bg-sky-500/10",
+    iconColor: "text-sky-600 dark:text-sky-400",
     description:
       "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Error deserunt facilis fuga iste obcaecati non dolorum, ad molestias quasi impedit",
   },
@@ -40,7 +41,8 @@ export const servicesData = [
     icon: Smartphone,
     name: "Mobile Development",
     hastag: "#coding",
-    bgColor: "bg-yellow-50",
+    iconBg: "bg-amber-100 dark:bg-amber-500/10",
+    iconColor: "text-amber-600 dark:text-amber-400",
     description:
       "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Error deserunt facilis fuga iste obcaecati non dolorum, ad molestias quasi impedit",
   },
@@ -48,7 +50,8 @@ export const servicesData = [
     icon: Microscope,
     name: "System Analysis",
     hastag: "#analyst",
-    bgColor: "bg-purple-50",
+    iconBg: "bg-violet-100 dark:bg-violet-500/10",
+    iconColor: "text-violet-600 dark:text-violet-400",
     description:
       "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Error deserunt facilis fuga iste obcaecati non dolorum, ad molestias quasi impedit",
   },
@@ -56,7 +59,8 @@ export const servicesData = [
     icon: Cloud,
     name: "Cloud Management",
     hastag: "#integration",
-    bgColor: "bg-green-50",
+    iconBg: "bg-emerald-100 dark:bg-emerald-500/10",
+    iconColor: "text-emerald-600 dark:text-emerald-400",
     description:
       "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Error deserunt facilis fuga iste obcaecati non dolorum, ad molestias quasi impedit",
   },

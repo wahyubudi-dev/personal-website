@@ -6,6 +6,7 @@ import HeaderTitle from "@/components/global/header/header-title";
 import Link from "next/link";
 import Overview from "./overview";
 import Calendar from "./calendar";
+import MotionSection from "@/components/elements/motionSection";
 
 interface GithubContributionProps {
   data: any;
@@ -13,7 +14,7 @@ interface GithubContributionProps {
 
 export default function GithubContribution({ data }: GithubContributionProps) {
   return (
-    <section className="py-6 flex flex-col gap-5">
+    <MotionSection className="py-6 flex flex-col gap-5">
       <HeaderTitle
         name="Contributions"
         descriptions="Github contribution and activities statistics"
@@ -37,6 +38,6 @@ export default function GithubContribution({ data }: GithubContributionProps) {
           <Calendar data={data} />
         </div>
       )}
-    </section>
+    </MotionSection>
   );
 }

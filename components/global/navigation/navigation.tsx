@@ -54,14 +54,6 @@ export default function Navigation() {
     controls.start({ opacity: 1, y: 0 });
   }, [controls, isMobile]);
 
-  useEffect(() => {
-    if (isMobile) {
-      collapse();
-    } else {
-      resetWidth();
-    }
-  }, [isMobile]);
-
   const collapse = () => {
     if (
       directLinkRef.current &&
@@ -106,10 +98,18 @@ export default function Navigation() {
     }
   };
 
+  useEffect(() => {
+    if (isMobile) {
+      collapse();
+    } else {
+      resetWidth();
+    }
+  }, [isMobile]);
+
   return (
     <motion.div
       className={cn(
-        "flex fixed px-3.5 py-3 left-1/2 -translate-x-1/2 bottom-6 rounded-3xl bg-gray-50 bg-opacity-90 border-[1.5px] border-white shadow-md shadow-black/[0.03]",
+        "flex fixed px-3.5 py-3 left-1/2 -translate-x-1/2 bottom-6 rounded-3xl border border-border/60 bg-card/80 shadow-soft-lg backdrop-blur-md",
         pathname === "/chat-room" && "hidden"
       )}
       initial={{ y: 50, x: "-50%", opacity: 0 }}

@@ -1,4 +1,5 @@
-import { cn } from "@/common/lib/utils";
+"use client";
+
 import {
   Card,
   CardContent,
@@ -7,40 +8,44 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { LucideIcon } from "lucide-react";
+import { motion } from "framer-motion";
+import IconChip from "@/components/elements/iconChip";
+import TiltCard from "@/components/elements/tiltCard";
+import { fadeInUp, hoverLift } from "@/common/lib/motion";
 
-interface ServiceListProps {
+interface ServiceCardProps {
   icon: LucideIcon;
   name: string;
   hastag: string;
-  bgColor: string;
+  iconBg: string;
+  iconColor: string;
   description: string;
 }
 
 export default function ServiceCard({
-  icon: Icon,
+  icon,
   name,
   hastag,
-  bgColor,
+  iconBg,
+  iconColor,
   description,
-}: ServiceListProps) {
+}: ServiceCardProps) {
   return (
-    <Card
-      key={name}
-      className={cn(
-        "dark:shadow-[0_3px_10px_rgb(0,0,0,0.15)] dark:shadow-neutral-800 dark:border-[1px] dark:border-gray-800 dark:text-black",
-        bgColor
-      )}
-    >
-      <CardHeader>
-        <div className="flex items-center gap-2">
-          <Icon size={14} />
-          <CardTitle className="text-base">{name}</CardTitle>
-        </div>
-        <CardDescription>{hastag}</CardDescription>
-      </CardHeader>
-      <CardContent>
-        <p className="text-justify text-gray-600">{description}</p>
-      </CardContent>
-    </Card>
+    <motion.div variants={fadeInUp} {...hoverLift}>
+      <TiltCard>
+        <Card className="h-full hover:shadow-soft-lg">
+          <CardHeader>
+            <IconChip icon={icon} iconBg={iconBg} iconColor={iconColor} />
+            <CardTitle className="pt-2 text-base font-medium">
+              {name}
+            </CardTitle>
+            <CardDescription>{hastag}</CardDescription>
+          </CardHeader>
+          <CardContent>
+            <p className="text-muted-foreground">{description}</p>
+          </CardContent>
+        </Card>
+      </TiltCard>
+    </motion.div>
   );
 }

@@ -1,8 +1,7 @@
 "use client";
 
 import * as React from "react";
-import { Ellipsis, Moon, Sun } from "lucide-react";
-import { useTheme } from "next-themes";
+import { Ellipsis } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import {
@@ -15,18 +14,12 @@ import Link from "next/link";
 import { collapseMenuLinks } from "@/common/constant/nav";
 
 export function CollapseNavigation() {
-  const { setTheme } = useTheme();
-
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Button
-          variant="outline"
-          size="icon"
-          className="w-[3.2rem] h-[3.2rem] rounded-2xl border border-gray-50 bg-white shadow transition-all hover:bg-orange-100 dark:hover:bg-slate-600 text-slate-700"
-        >
-          <Ellipsis className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
-          <span className="sr-only">Toggle theme</span>
+        <Button variant="outline" size="icon" className="dock-icon-btn">
+          <Ellipsis className="h-[1.2rem] w-[1.2rem]" />
+          <span className="sr-only">Open menu</span>
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end">

@@ -63,6 +63,11 @@ const config = {
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
       },
+      boxShadow: {
+        soft: "0 2px 10px -2px rgb(0 0 0 / 0.06), 0 8px 30px -10px rgb(0 0 0 / 0.08)",
+        "soft-lg":
+          "0 4px 16px -4px rgb(0 0 0 / 0.08), 0 16px 40px -12px rgb(0 0 0 / 0.12)",
+      },
       keyframes: {
         "accordion-down": {
           from: { height: "0" },
@@ -88,12 +93,17 @@ const config = {
             backgroundPosition: "-200% 0",
           },
         },
+        float: {
+          "0%, 100%": { transform: "translate(0, 0) scale(1)" },
+          "50%": { transform: "translate(2%, -4%) scale(1.05)" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
         aurora: "aurora 60s linear infinite",
         shimmer: "shimmer 2s linear infinite",
+        float: "float 12s ease-in-out infinite",
       },
     },
   },

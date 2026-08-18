@@ -1,6 +1,6 @@
 export default function SummaryProfile() {
   return (
-    <div className="text-justify leading-6 text-gray-600 dark:text-white">
+    <div className="max-w-2xl leading-7 text-muted-foreground">
       Experienced Fullstack Engineer / Software Engineer of hands-on expertise
       in Computer Science. Proficient in Computer Science, I possess a keen
       interest in tackling complex problems and crafting innovative solutions.

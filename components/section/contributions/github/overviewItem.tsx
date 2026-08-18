@@ -1,4 +1,9 @@
+"use client";
+
 import AnimateCounter from "@/components/elements/animateCounter";
+import { Card, CardContent } from "@/components/ui/card";
+import { motion } from "framer-motion";
+import { hoverLift } from "@/common/lib/motion";
 
 interface OverviewItemProps {
   label: string;
@@ -12,15 +17,21 @@ export default function OverviewItem({
   unit = "",
 }: OverviewItemProps) {
   return (
-    <div className="flex flex-col self-center rounded-xl border border-gray-50 bg-white shadow px-4 py-3 dark:border-neutral-700 dark:bg-neutral-800">
-      <span className="text-sm dark:text-neutral-400">{label}</span>
-      <div>
-        <AnimateCounter
-          className="text-xl font-medium text-green-600 lg:text-2xl"
-          total={value}
-        />
-        {unit && <span className="text-sm dark:text-neutral-400"> {unit}</span>}
-      </div>
-    </div>
+    <motion.div {...hoverLift} className="self-center">
+      <Card>
+        <CardContent className="flex flex-col gap-0 p-4">
+          <span className="text-sm text-muted-foreground">{label}</span>
+          <div>
+            <AnimateCounter
+              className="text-xl font-medium text-primary lg:text-2xl"
+              total={value}
+            />
+            {unit && (
+              <span className="text-sm text-muted-foreground"> {unit}</span>
+            )}
+          </div>
+        </CardContent>
+      </Card>
+    </motion.div>
   );
 }

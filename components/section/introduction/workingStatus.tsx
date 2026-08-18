@@ -1,4 +1,6 @@
 import { Badge } from "@/components/ui/badge";
+import { motion } from "framer-motion";
+import { hoverLiftSmall } from "@/common/lib/motion";
 
 interface WorkingStatusProps {
   isPlace: Boolean;
@@ -7,12 +9,16 @@ interface WorkingStatusProps {
 
 export default function WorkingStatus({ isPlace, name }: WorkingStatusProps) {
   return (
-    <Badge
-      variant="outline"
-      className="flex items-center gap-1 dark:shadow-[0_3px_10px_rgb(0,0,0,0.15)] dark:shadow-neutral-800 dark:border-[1px] dark:border-gray-800"
-    >
-      {!isPlace && <span className="text-green-600">{!isPlace && "•"}</span>}
-      {name}
-    </Badge>
+    <motion.div {...hoverLiftSmall}>
+      <Badge
+        variant="outline"
+        className="flex items-center gap-1.5 border-border/70 bg-card px-3 py-1 shadow-soft"
+      >
+        {!isPlace && (
+          <span className="h-1.5 w-1.5 rounded-full bg-emerald-500" />
+        )}
+        {name}
+      </Badge>
+    </motion.div>
   );
 }

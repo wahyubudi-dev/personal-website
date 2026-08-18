@@ -9,8 +9,8 @@ export const metadata: Metadata = {
 
 export default function ChatRoomPage() {
   return (
-    <main className="flex flex-col items-center py-16 gap-6 px-8 lg:px-0 h-screen">
-      <div className="max-w-[50rem] w-full h-full">
+    <main className="page-shell h-screen">
+      <div className="page-container h-full">
         <ChatRoom />
       </div>
     </main>
